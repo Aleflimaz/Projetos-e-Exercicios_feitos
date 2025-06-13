@@ -1,3 +1,5 @@
+//Descobrir as palavras chaves que foram usadas para criar senhas de usuarios, sendo 24 palavras em ate 5 combinacoes das mesmas
+//Somente o Hash dos usuarios conhecido, sendo necessario combinar todas as possiveis palavras e comparar com os Hash originais.
 #include <stdio.h>
 #include <openssl/sha.h>
 #include <string.h>
