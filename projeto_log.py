@@ -1,3 +1,5 @@
+## Programa que ler os logs de um site e exibe quantas vezes foi acessado no dia, tempo medio resposta, e usuario mais frequente.
+## Feito para projeto da disciplina de algoritmos e programação I.
 import os
 
 def main ():
