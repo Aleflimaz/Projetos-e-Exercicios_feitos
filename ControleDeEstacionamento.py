@@ -13,7 +13,7 @@ moto_valor_acumulado=0
 valorfinal_acumulado=0
 tempo_acumulado =0
 while(True):
-    iniciar=int(input(" Digite [ 1 ] para menu de CADASTRO DE TARIFAS.\n Digite [ 2 ] Para Registros de entrada ou saída \n Digite [3] para Gerar Relatórios\n Digite [4] para encerrar o programa\n "))
+    iniciar=int(input(" Digite [ 1 ] para menu de CADASTRO DE TARIFAS.\n Digite [ 2 ] Para Registros de entrada ou saída \n Digite [ 3 ] para Gerar Relatórios\n Digite [ 4 ] para encerrar o programa\n "))
     tarifaCarroG = 40
     tarifaCarroG2= 20
     tarifaCarroP =30
@@ -35,7 +35,6 @@ while(True):
                 tarifaCarroG2= float(input("Digite o valor a ser pago por cada hora adicional de permanência em R$ para CARROS GRANDES: "))
                 print("TARIFA DE CARROS GRANDES CADASTRADA")
             
-
                 tarifaMotos= float(input("Digite o valor em R$ para a TARIFA DE MOTOS: "))
                 tarifaMotos2= float(input("Digite o valor a ser pago por cada hora adicional de permanência em R$ para MOTOS: "))
              
@@ -55,7 +54,6 @@ while(True):
         while(True):
             controle_opcao= int(input(" Digite [1] para registrar ENTRADA de veiculo.\n Digite [2] para registrar SAÍDA de veiculo.\n Digite [3] para voltar ao menu"))
             
-
             if controle_opcao== 1:
                 while (True):
 
@@ -110,7 +108,7 @@ while(True):
                     else:
                         print(" DIGITE UMA DAS OPÇÕES ")
                         continue
-                    ###@@@@dias_total=input(" Digite a quantidade de dias que ele permaneceu ")
+
                     hora_entrada, minutos_entrada= input(" Digite a hora de ENTRADA do veiculo formato hh:mm ").split(':')
                     hora_saida, minutos_saida= input(" Digite a hora de SAÍDA do veiculo formato hh:mm ").split(':')
 
@@ -127,32 +125,21 @@ while(True):
                     if horafinalsaida < horafinalentrada:
                         horafinalsaida += 24
 
-                        ####@@@@horafinalsaida *=(dias_total+1)
-                        ###@@@@Se precisar opção dias^^
                     horafinal = horafinalsaida - horafinalentrada
                     valorfinal2=0
                     
-                    ###@Como no exercicio pede registrar o valor referente a 3H e depois o Hora/adicional
-                    ###@assumi que seria o valor minimo que um carro poderia pagar
-                    ###@então mesmo não ficando as 3H completas seria pago o valor completo.
-
                     if tipo_veiculo_saida ==1:
                         tarifa_final = tarifaCarroP
-                        ###@valorfinal= horafinal* tarifa_final
+                        
                     elif tipo_veiculo_saida ==2:
                         tarifa_final = tarifaCarroG
-                        ###@valorfinal = horafinal*tarifa_final
+                        
                     elif tipo_veiculo_saida ==3:
                         tarifa_final = tarifaMotos
-                        ###@valorfinal = horafinal* tarifa_final
+                        
 
                     if horafinal > 3:
                         horafinal0= horafinal - 3
-
-                        ###@@Se será cobrado a hora inteira independente dos minutos 
-                        ###@@aplica-se o math.ceil para arredondar para cima.
-
-                        ###@@horafinal0 = math.ceil(horafinal0)
         
                         if tipo_veiculo_saida ==1:
                             tarifa_final2= tarifaCarroP2                                                                               
@@ -166,7 +153,6 @@ while(True):
                             tarifa_final2= tarifaMotos2
                             valorfinal2 = horafinal0 * tarifaMotos2
 
-                    ###@valorfinal0= valorfinal + valorfinal2   
                     valorfinal0= tarifa_final + valorfinal2
 
                     opcao_pix=int(input(' Cliente vai pagar com pix? (5% deesconto)\n Digite [1] para Sim \n Digite [0] para Não'))
@@ -223,4 +209,3 @@ while(True):
     else:
         print("DIGITE UMA DAS OPÇÕES ")
         
-
